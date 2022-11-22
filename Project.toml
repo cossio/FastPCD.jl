@@ -1,0 +1,12 @@
+name = "FastPCD"
+uuid = "5e47bd60-7715-431b-887a-edff83ed7926"
+authors = ["Jorge Fernandez-de-Cossio-Diaz <j.cossio.diaz@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Optimisers = "3bd65402-5787-11e9-1adc-39752487f4e2"
+RestrictedBoltzmannMachines = "12e6b396-7db5-4506-8cb6-664a4fe1e50e"
+
+[compat]
+RestrictedBoltzmannMachines = "0.38"
+julia = "1.8"
