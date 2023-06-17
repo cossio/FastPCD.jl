@@ -29,6 +29,9 @@ function fast_pcd!(rbm::RBM, data::AbstractArray;
     ps = (; visible = rbm.visible.par, hidden = rbm.hidden.par, w = rbm.w)
     state = setup(optim, ps)
 
+    ps_fast = (; visible = rbmfast.visible.par, hidden = rbmfast.hidden.par, w = rbmfast.w)
+    state_fast = setup(optimfast, ps_fast)
+
     # (Actually, the parameters of rbmfast are the sums θ_regular + θ_fast)
     for _ in 1:epochs, (vd, wd) in minibatches(data, wts; batchsize)
         vm = sample_v_from_v(rbmfast, vm; steps)
@@ -39,6 +42,7 @@ function fast_pcd!(rbm::RBM, data::AbstractArray;
 
         gs = (; visible=∂.visible, hidden=∂.hidden, w=∂.w)
         state, ps = update!(state, ps, gs)
+        state_fast, ps_fast = update!(state_fast, ps_fast, gs)
 
         decayfast!(rbmfast, rbm; decay=decayfast)
     end
