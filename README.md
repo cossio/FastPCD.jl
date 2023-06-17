@@ -12,7 +12,7 @@ This package is not registered. Install with:
 
 ```julia
 import Pkg
-Pkg.add("FastPCD")
+Pkg.add("https://github.com/cossio/FastPCD.jl")
 ```
 
 ## References
