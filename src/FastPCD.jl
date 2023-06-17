@@ -1,6 +1,7 @@
 module FastPCD
 
-using RestrictedBoltzmannMachines: RBM, Binary, Spin, Potts, Gaussian, ReLU, dReLU
+using RestrictedBoltzmannMachines: RBM, Binary, Spin, Potts, Gaussian, ReLU, dReLU,
+    sample_from_inputs, moments_from_samples, ∂free_energy
 using Optimisers: AbstractRule, setup, update!, Adam
 
 """
