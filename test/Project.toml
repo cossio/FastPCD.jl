@@ -1,2 +1,3 @@
 [deps]
+FastPCD = "5e47bd60-7715-431b-887a-edff83ed7926"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
